@@ -12,7 +12,8 @@ contract nftContract{
         uint createdTime;
         uint remainingTime;
     }
-
+    // should be using block.number instead of block.timestamp
+    
    function createNFT (string memory _placeholder, uint _remainingTime) public returns(uint){
        nftCount++;
        nfts[nftCount] = NFT(msg.sender, nftCount, _placeholder, block.timestamp, _remainingTime);
